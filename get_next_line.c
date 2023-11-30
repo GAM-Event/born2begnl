@@ -113,24 +113,3 @@ char	*get_next_line(int fd)
 	make_line(fd, &buffer, &next_start, &n_index);
 	return (buffer);
 }
-
-#include <fcntl.h>
-#include <stdio.h>
-#include <time.h>
-int main()
-{
-	clock_t start = clock();
-	int fd  = open("big_line_no_nl", O_RDONLY);
-	printf("%s",get_next_line(fd));
-	// printf("%s",get_next_line(fd));
-
-	// int fd  = open("big_line_no_nl", O_RDONLY);
-	// printf("%s",get_next_line(fd));
-	// printf("%s",get_next_line(fd));
-
-	// int fd  = open("big_line_no_nl", O_RDONLY);
-	// printf("%s",get_next_line(fd));
-	// printf("%s",get_next_line(fd));
-	clock_t end = clock();
-	printf("\n소요 시간: %lf\n", (double)(end - start) / CLOCKS_PER_SEC);
-}
