@@ -10,11 +10,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: install paco
-        run: "$(curl -fsSL https://raw.github.com/xicodomingues/francinette/master/bin/install.sh)"
+        run: sudo "$(curl -fsSL https://raw.github.com/xicodomingues/francinette/master/bin/install.sh)"
       - name: norm
         run: | 
-          python3 -m pip install --upgrade pip setuptools && python3 -m pip install norminette
-          python3 -m pip install --upgrade norminette
+          sudo python3 -m pip install --upgrade pip setuptools && python3 -m pip install norminette
+          sudo python3 -m pip install --upgrade norminette
       - name: check
         run: time norminette */*.[c/h]
         
